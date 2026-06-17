@@ -149,6 +149,11 @@ main {
   color: #fff9ec;
 }
 
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.68;
+}
+
 .button.secondary {
   background: rgba(255, 255, 255, 0.62);
   color: var(--ink);
@@ -298,6 +303,29 @@ textarea {
   grid-column: 1 / -1;
 }
 
+.form-status {
+  border-radius: 8px;
+  font-family: Arial, sans-serif;
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: 12px 14px;
+}
+
+.form-status.idle {
+  background: rgba(232, 240, 223, 0.76);
+  color: var(--muted);
+}
+
+.form-status.success {
+  background: rgba(77, 123, 99, 0.14);
+  color: var(--leaf);
+}
+
+.form-status.error {
+  background: rgba(185, 95, 80, 0.12);
+  color: var(--rose);
+}
+
 .checkbox {
   align-items: start;
   display: flex;
@@ -307,6 +335,15 @@ textarea {
 .checkbox input {
   min-height: auto;
   width: auto;
+}
+
+.honeypot {
+  height: 1px;
+  left: -10000px;
+  overflow: hidden;
+  position: absolute;
+  top: auto;
+  width: 1px;
 }
 
 .faq {

@@ -5,11 +5,11 @@ export default function ThankYouPage() {
     <main>
       <section className="simple-hero thank-you">
         <p className="eyebrow">Thank you</p>
-        <h1>Your interest was noted locally.</h1>
+        <h1>Thank you for caring about Milamula.</h1>
         <p className="lead">
-          This MVP form is currently a placeholder and does not store submissions yet.
-          Connect Supabase, Airtable, Google Forms, or another backend before using it
-          with real customers.
+          Your preorder interest has been received. Milamula will follow up by
+          WhatsApp or email when the first kit is ready to preview. No payment has
+          been charged.
         </p>
         <Link className="button primary" href="/">
           Back to Milamula

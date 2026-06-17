@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { PreorderForm } from "@/app/components/PreorderForm";
 import { faqs, firstKit, kitFormats } from "@/lib/content";
 
 export default function Home() {
@@ -91,9 +92,12 @@ export default function Home() {
         <div className="section-heading">
           <p className="eyebrow">Preorder interest</p>
           <h2>Help shape the first Milamula kit.</h2>
-          <p>This placeholder form routes to a thank-you page. Connect a backend before collecting real orders.</p>
+          <p>
+            Join the early interest list for {firstKit.title}. This is not a payment
+            or confirmed order yet, just a gentle way to hear from interested families.
+          </p>
         </div>
-        <InterestForm />
+        <PreorderForm />
       </section>
 
       <section className="section faq">
@@ -109,69 +113,5 @@ export default function Home() {
         ))}
       </section>
     </main>
-  );
-}
-
-function InterestForm() {
-  return (
-    <form className="interest-form" action="/thank-you" method="get">
-      <label>
-        Parent name
-        <input name="parentName" type="text" placeholder="Your name" />
-      </label>
-      <label>
-        Phone / WhatsApp
-        <input name="phone" type="tel" placeholder="+62..." />
-      </label>
-      <label>
-        Email optional
-        <input name="email" type="email" placeholder="you@example.com" />
-      </label>
-      <label>
-        Child age range
-        <select name="childAge">
-          <option>3-4</option>
-          <option>5-6</option>
-          <option>7-8</option>
-          <option>Mixed ages</option>
-        </select>
-      </label>
-      <label>
-        Preferred kit format
-        <select name="format">
-          <option>PDF only</option>
-          <option>Printed worksheet pack</option>
-          <option>Printed pack + 3D bundle</option>
-        </select>
-      </label>
-      <label>
-        Preferred theme
-        <select name="theme">
-          <option>Gentle courage</option>
-          <option>Kindness and care</option>
-          <option>Patience and trying again</option>
-          <option>Creative problem-solving</option>
-        </select>
-      </label>
-      <label>
-        Willingness to preorder
-        <select name="preorder">
-          <option>Yes, if the preview looks good</option>
-          <option>Maybe, I want price details first</option>
-          <option>Not yet, just interested</option>
-        </select>
-      </label>
-      <label className="full">
-        Notes
-        <textarea name="notes" placeholder="What would make this useful for your family?" />
-      </label>
-      <label className="checkbox full">
-        <input name="consent" type="checkbox" value="yes" />
-        I agree to be contacted about Milamula preorder interest.
-      </label>
-      <button className="button primary full-button" type="submit">
-        Send interest
-      </button>
-    </form>
   );
 }
