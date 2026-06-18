@@ -129,3 +129,8 @@ For the MVP, export preorder rows manually from Supabase:
 
 This keeps the first version simple without adding a login-protected admin
 dashboard or storing private service keys locally.
+
+## Vercel Deployment
+
+Before launching, configure Vercel production environment variables and run the
+post-deploy smoke test in `docs/vercel-launch-checklist.md`.
