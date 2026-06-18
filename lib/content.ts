@@ -36,7 +36,7 @@ export const faqs = [
   {
     question: "Is Milamula a subscription?",
     answer:
-      "Not yet. The first MVP validates one paid activity kit before building a larger content platform."
+      "Not yet. The first release is a one-off activity kit. More kits may come later if families find this useful."
   },
   {
     question: "Can I buy only the printable PDF?",

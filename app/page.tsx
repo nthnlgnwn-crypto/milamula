@@ -32,7 +32,7 @@ export default function Home() {
 
       <section className="section">
         <div className="section-heading">
-          <p className="eyebrow">First validation product</p>
+          <p className="eyebrow">First adventure kit</p>
           <h2>{firstKit.title}</h2>
           <p>{firstKit.tagline}</p>
         </div>
@@ -59,8 +59,8 @@ export default function Home() {
 
       <section className="section">
         <div className="section-heading">
-          <p className="eyebrow">MVP formats</p>
-          <h2>Start simple, learn what parents actually want.</h2>
+          <p className="eyebrow">Ways to join</p>
+          <h2>Simple options for different family rhythms.</h2>
         </div>
         <div className="format-list">
           {kitFormats.map((format) => (
@@ -90,11 +90,11 @@ export default function Home() {
 
       <section className="section" id="interest">
         <div className="section-heading">
-          <p className="eyebrow">Preorder interest</p>
+          <p className="eyebrow">Early interest list</p>
           <h2>Help shape the first Milamula kit.</h2>
           <p>
             Join the early interest list for {firstKit.title}. This is not a payment
-            or confirmed order yet, just a gentle way to hear from interested families.
+            or confirmed order yet, just a gentle way to plan the first small release.
           </p>
         </div>
         <PreorderForm />

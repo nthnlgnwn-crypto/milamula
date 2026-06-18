@@ -27,8 +27,8 @@ export default function HowItWorksPage() {
         <h1>How Milamula works</h1>
         <p className="lead">
           Milamula is designed for short, warm parent-child activity sessions.
-          The first MVP keeps everything simple so the product can be tested before
-          building a larger platform.
+          The first kit keeps everything simple so families can try one story-led
+          activity before Milamula grows into more.
         </p>
       </section>
 
@@ -46,12 +46,11 @@ export default function HowItWorksPage() {
 
       <section className="section split">
         <div>
-          <p className="eyebrow">Validation focus</p>
-          <h2>Learn what parents will actually buy.</h2>
+          <p className="eyebrow">Why the early list matters</p>
+          <h2>Help choose what Milamula makes first.</h2>
           <p>
-            The website should answer whether parents understand the offer, prefer
-            PDF or printed formats, care about the 3D bundle, and might preorder a
-            one-off kit before any subscription is built.
+            Early interest helps Milamula understand whether families prefer printable
+            pages, printed packs, or a parent-supervised 3D story bundle.
           </p>
         </div>
         <Link className="button primary" href="/#interest">

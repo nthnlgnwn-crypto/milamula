@@ -7,7 +7,7 @@ export default function KitPage() {
     <main>
       <section className="kit-hero">
         <div>
-          <p className="eyebrow">First MVP offer</p>
+          <p className="eyebrow">First adventure kit</p>
           <h1>{firstKit.title}</h1>
           <p className="lead">{firstKit.tagline}</p>
           <p className="small-meta">{firstKit.ageRange}</p>
@@ -23,8 +23,8 @@ export default function KitPage() {
           <p className="eyebrow">Learning objective</p>
           <h2>{firstKit.learningGoal}</h2>
           <p>
-            The kit should feel playful and parent-friendly while giving adults one
-            simple value to reinforce during the activity.
+            The kit is designed to feel playful and parent-friendly while giving adults
+            one simple value to explore during the activity.
           </p>
         </div>
         <div className="note-box">
@@ -41,7 +41,7 @@ export default function KitPage() {
       <section className="section">
         <div className="section-heading">
           <p className="eyebrow">What is included</p>
-          <h2>Small enough to try, complete enough to sell.</h2>
+          <h2>A complete little kit without a big setup.</h2>
         </div>
         <div className="feature-grid">
           {firstKit.includes.map((item) => (
@@ -56,7 +56,7 @@ export default function KitPage() {
       <section className="section">
         <div className="section-heading">
           <p className="eyebrow">Product formats</p>
-          <h2>Three ways to validate demand.</h2>
+          <h2>Choose how you want to receive it.</h2>
         </div>
         <div className="format-list">
           {kitFormats.map((format) => (
@@ -71,7 +71,7 @@ export default function KitPage() {
       <section className="band">
         <div>
           <p className="eyebrow">Safety and supervision</p>
-          <h2>Careful language before physical product claims.</h2>
+          <h2>Safety and supervision come first.</h2>
         </div>
         <p>{firstKit.supervisionNote}</p>
       </section>
