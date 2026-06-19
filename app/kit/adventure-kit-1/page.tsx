@@ -12,10 +12,16 @@ export default function KitPage() {
           <p className="lead">{firstKit.tagline}</p>
           <p className="small-meta">{firstKit.ageRange}</p>
           <Link className="button primary" href="/#interest">
-            Register preorder interest
+            Join the first adventure
           </Link>
         </div>
-        <Image src="/assets/sami-cover.jpg" alt="Sami story kit preview" width={620} height={620} priority />
+        <Image
+          src="/assets/characters/mori-concept-final.png"
+          alt="Mori the Little Lantern Keeper concept for the first TaleMori kit"
+          width={1536}
+          height={1024}
+          priority
+        />
       </section>
 
       <section className="section split">
@@ -23,17 +29,17 @@ export default function KitPage() {
           <p className="eyebrow">Learning objective</p>
           <h2>{firstKit.learningGoal}</h2>
           <p>
-            The kit is designed to feel playful and parent-friendly while giving adults
-            one simple value to explore during the activity.
+            The kit is designed to feel playful and parent-friendly while giving
+            adults one simple mission to explore during the activity.
           </p>
         </div>
         <div className="note-box">
           <h3>Activity preview</h3>
           <ul>
-            <li>Read a short story together.</li>
-            <li>Color or complete one simple activity page.</li>
-            <li>Use parent prompts to talk about the value.</li>
-            <li>Optionally use a supervised 3D story object.</li>
+            <li>Read Mori&apos;s short illustrated story together.</li>
+            <li>Complete one printable moonlight mission.</li>
+            <li>Use parent prompts to name feelings and choices.</li>
+            <li>Optionally add a supervised collectible later.</li>
           </ul>
         </div>
       </section>
@@ -56,7 +62,7 @@ export default function KitPage() {
       <section className="section">
         <div className="section-heading">
           <p className="eyebrow">Product formats</p>
-          <h2>Choose how you want to receive it.</h2>
+          <h2>Start printable-first, then grow carefully.</h2>
         </div>
         <div className="format-list">
           {kitFormats.map((format) => (

@@ -13,7 +13,7 @@ type FormStatus =
 const initialStatus: FormStatus = {
   kind: "idle",
   message:
-    "Share your interest and we will follow up about Milamula by WhatsApp or email. No payment is charged here."
+    "Share your interest and TaleMori will follow up by WhatsApp or email. No payment is charged here."
 };
 
 export function PreorderForm() {
@@ -51,7 +51,7 @@ export function PreorderForm() {
     }
 
     setIsSubmitting(true);
-    setStatus({ kind: "idle", message: "Sending your Milamula preorder interest..." });
+    setStatus({ kind: "idle", message: "Sending your TaleMori preorder interest..." });
 
     let response: Response;
     let result: { message?: string } | null;
@@ -97,7 +97,7 @@ export function PreorderForm() {
     setStatus({
       kind: "success",
       message:
-        "Thank you. Your preorder interest was received. Milamula will follow up by WhatsApp or email when Kit #1 is ready to preview. No payment has been charged."
+        "Thank you. Your preorder interest was received. TaleMori will follow up by WhatsApp or email when the first adventure is ready to preview. No payment has been charged."
     });
   }
 
@@ -143,7 +143,7 @@ export function PreorderForm() {
         {status.message}
       </p>
       <button className="button primary full-button" type="submit" disabled={isSubmitting}>
-        {isSubmitting ? "Sending..." : "Join preorder interest list"}
+        {isSubmitting ? "Sending..." : "Join the first adventure list"}
       </button>
     </form>
   );

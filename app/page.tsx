@@ -5,39 +5,39 @@ import { faqs, firstKit, kitFormats } from "@/lib/content";
 
 const promises = [
   {
-    title: "Story first",
-    copy: "Start with a gentle read-aloud moment before moving into coloring, making, or pretend play."
+    title: "Simple setup",
+    copy: "Start with a short story and one printable mission instead of a complicated craft plan."
   },
   {
-    title: "Parent guided",
-    copy: "Each kit is designed for adult-child time, with simple prompts instead of complicated lessons."
+    title: "Printable-first",
+    copy: "Use the kit at home with paper, crayons, and a few parent prompts before any physical bundle exists."
   },
   {
-    title: "Screen-light",
-    copy: "Printable pages and optional story objects help children use their hands, words, and imagination."
+    title: "Early preorder list",
+    copy: "Share interest now so TaleMori can plan the first small release. No payment is charged here."
   }
 ];
 
 const kitHighlights = [
-  "a short read-aloud story",
-  "printable activity pages",
-  "a parent guide with simple prompts",
-  "a coloring or making page",
-  "optional parent-supervised story objects"
+  "short illustrated story",
+  "printable activity mission",
+  "parent guide",
+  "creative prompt",
+  "optional collectible character later"
 ];
 
 const howItWorks = [
   {
-    title: "Read together",
-    copy: "Use the story to introduce one gentle value in a calm, concrete way."
+    title: "Read the story",
+    copy: "Meet Mori and follow the lost moonlight through a gentle story mission."
   },
   {
-    title: "Make or color",
-    copy: "Turn the story into a hands-on page children can draw, color, sort, or retell."
+    title: "Make the activity",
+    copy: "Use a printable page to color, choose, sequence, or create part of the mission."
   },
   {
-    title: "Share interest",
-    copy: "Join the early list so Milamula can plan the first small release. No payment is charged."
+    title: "Play the mission",
+    copy: "Retell the adventure, name a feeling, and keep one little light for the next brave beginning."
   }
 ];
 
@@ -46,61 +46,84 @@ export default function Home() {
     <main className="home-page">
       <section className="home-hero">
         <div className="home-hero-copy">
-          <p className="eyebrow">Printable story kits for little hands</p>
-          <h1>Milamula</h1>
+          <p className="eyebrow">Meet Mori, the Little Lantern Keeper</p>
+          <h1>TaleMori</h1>
           <p className="lead">
-            Warm story-and-activity kits for parents who want a simple,
-            screen-light way to read, make, and imagine with young children.
+            Stories that grow into play. Follow Mori into screen-light story
+            missions made for parents and children ages 4-7.
           </p>
           <div className="button-row">
-            <Link className="button primary" href="/kit/adventure-kit-1">
-              See Adventure Kit #1
+            <Link className="button primary" href="#interest">
+              Join the first adventure
             </Link>
-            <Link className="button secondary" href="/how-it-works">
-              How it works
+            <Link className="button secondary" href="#mori">
+              Meet Mori
             </Link>
-            <Link className="text-link" href="#interest">
-              Join preorder list
+            <Link className="text-link" href="/kit/adventure-kit-1">
+              See the kit
             </Link>
           </div>
-          <dl className="hero-facts" aria-label="Milamula kit summary">
+          <dl className="hero-facts" aria-label="TaleMori kit summary">
             <div>
               <dt>Age</dt>
-              <dd>3-8 with guidance</dd>
+              <dd>4-7 with guidance</dd>
             </div>
             <div>
-              <dt>Format</dt>
-              <dd>Printable first</dd>
+              <dt>First kit</dt>
+              <dd>{firstKit.title}</dd>
             </div>
             <div>
-              <dt>Status</dt>
-              <dd>Early interest list</dd>
+              <dt>Phrase</dt>
+              <dd>A little light for every brave beginning.</dd>
             </div>
           </dl>
         </div>
-        <div className="hero-art" aria-label="Milamula story previews">
-          <figure className="image-card image-card-large">
-            <Image src="/assets/sami-cover.jpg" alt="Sami story kit preview" width={620} height={620} priority />
-            <figcaption>Adventure Kit #1 preview</figcaption>
+        <div className="hero-art hero-art-featured" aria-label="Mori character concept">
+          <figure className="image-card image-card-wide">
+            <Image
+              src="/assets/characters/mori-concept-final.png"
+              alt="Mori the Little Lantern Keeper character concept"
+              width={1536}
+              height={1024}
+              priority
+            />
+            <figcaption>Mori carries the Lantern of Little Lights.</figcaption>
           </figure>
-          <div className="image-card-stack">
-            <figure className="image-card image-card-small">
-              <Image src="/assets/milo-cover.jpg" alt="Milo story preview" width={420} height={420} priority />
-            </figure>
-            <figure className="image-card image-card-small">
-              <Image src="/assets/nia-cover.jpg" alt="Nia story preview" width={420} height={420} priority />
-            </figure>
+        </div>
+      </section>
+
+      <section className="section kit-preview-section" id="mori">
+        <div className="kit-preview">
+          <div className="kit-preview-media character-portrait">
+            <Image
+              src="/assets/characters/mori-concept-final.png"
+              alt="Mori in a moss-green hooded cape holding a glowing lantern"
+              width={1536}
+              height={1024}
+            />
+          </div>
+          <div className="kit-preview-copy">
+            <p className="eyebrow">Flagship character</p>
+            <h2>Meet Mori, the Little Lantern Keeper.</h2>
+            <p>
+              Mori is a gentle woodland guide in a moss-green hooded cape,
+              carrying the Lantern of Little Lights. The lantern glows when a
+              child begins a brave story mission.
+            </p>
+            <p className="soft-note">
+              Quietly brave, kind, curious, and comforting.
+            </p>
           </div>
         </div>
       </section>
 
       <section className="section promise-section">
         <div className="section-heading centered">
-          <p className="eyebrow">What Milamula is</p>
-          <h2>A small story-led kit for real family time.</h2>
+          <p className="eyebrow">What TaleMori is</p>
+          <h2>A story-led activity kit for screen-light creative time.</h2>
           <p>
-            Milamula keeps the activity simple enough for a normal day: one story,
-            a few printable pages, and prompts that help children talk, make, and retell.
+            Mori helps little hearts find courage, name feelings, and complete
+            small story missions through reading, making, and pretend play.
           </p>
         </div>
         <div className="editorial-grid">
@@ -116,8 +139,13 @@ export default function Home() {
 
       <section className="section kit-preview-section">
         <div className="kit-preview">
-          <div className="kit-preview-media">
-            <Image src="/assets/sami-cover.jpg" alt="Milamula Adventure Kit #1 preview" width={620} height={620} />
+          <div className="kit-preview-media character-portrait">
+            <Image
+              src="/assets/characters/mori-concept-final.png"
+              alt="TaleMori first adventure kit preview with Mori"
+              width={1536}
+              height={1024}
+            />
           </div>
           <div className="kit-preview-copy">
             <p className="eyebrow">First adventure kit</p>
@@ -132,7 +160,7 @@ export default function Home() {
               This is an early interest list, not a payment or confirmed order.
             </p>
             <Link className="button primary" href="#interest">
-              Join preorder list
+              Join the first adventure
             </Link>
           </div>
         </div>
@@ -157,8 +185,8 @@ export default function Home() {
       <section className="expectation-band">
         <div className="expectation-inner">
           <div>
-            <p className="eyebrow">What to expect</p>
-            <h2>Clear, careful, and still early.</h2>
+            <p className="eyebrow">Parent expectations</p>
+            <h2>Simple, printable, and still early.</h2>
           </div>
           <div className="expectation-grid">
             {kitFormats.map((format) => (
@@ -168,10 +196,10 @@ export default function Home() {
               </article>
             ))}
             <article>
-              <h3>Supervised physical objects</h3>
+              <h3>No payment charged yet</h3>
               <p>
-                Any 3D-printed add-ons are parent-supervised activity objects.
-                Materials, finish, sizing, and age suitability must be verified before sale.
+                The form is only an early preorder interest list. TaleMori will
+                follow up before anything is confirmed or charged.
               </p>
             </article>
           </div>
@@ -181,10 +209,10 @@ export default function Home() {
       <section className="section preorder-section" id="interest">
         <div className="preorder-copy">
           <p className="eyebrow">Early interest list</p>
-          <h2>Tell us if Milamula should make a first small release.</h2>
+          <h2>Join the first TaleMori adventure list.</h2>
           <p className="lead-small">
             Leave your details if you want to hear when {firstKit.title} is ready
-            to preview. Milamula will follow up by WhatsApp or email.
+            to preview. TaleMori will follow up by WhatsApp or email.
           </p>
           <ul className="plain-list">
             <li>No payment is charged here.</li>

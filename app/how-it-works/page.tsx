@@ -2,20 +2,20 @@ import Link from "next/link";
 
 const steps = [
   {
-    title: "Read",
-    copy: "Start with a short parent-read story that introduces one gentle value."
+    title: "Read the story",
+    copy: "Meet Mori and follow a short illustrated adventure with your child."
   },
   {
-    title: "Make or color",
-    copy: "Use a printable activity page to turn the story into a hands-on moment."
+    title: "Make the activity",
+    copy: "Use a printable mission page to turn the story into a hands-on moment."
   },
   {
-    title: "Talk",
-    copy: "Use simple prompts so parents can connect the activity to everyday life."
+    title: "Play the mission",
+    copy: "Retell the adventure, choose the next little step, and name a feeling."
   },
   {
-    title: "Extend",
-    copy: "Optionally add parent-supervised 3D-printed story objects after safety and production checks."
+    title: "Keep the little light",
+    copy: "Use the parent guide to connect Mori's mission to everyday brave beginnings."
   }
 ];
 
@@ -24,11 +24,11 @@ export default function HowItWorksPage() {
     <main>
       <section className="simple-hero">
         <p className="eyebrow">Parent guide</p>
-        <h1>How Milamula works</h1>
+        <h1>How TaleMori works</h1>
         <p className="lead">
-          Milamula is designed for short, warm parent-child activity sessions.
-          The first kit keeps everything simple so families can try one story-led
-          activity before Milamula grows into more.
+          TaleMori is designed for short, warm parent-child activity sessions.
+          The first kit keeps everything simple: one Mori story, one printable
+          mission, and one little light to carry forward.
         </p>
       </section>
 
@@ -47,14 +47,15 @@ export default function HowItWorksPage() {
       <section className="section split">
         <div>
           <p className="eyebrow">Why the early list matters</p>
-          <h2>Help choose what Milamula makes first.</h2>
+          <h2>Help shape TaleMori&apos;s first small release.</h2>
           <p>
-            Early interest helps Milamula understand whether families prefer printable
-            pages, printed packs, or a parent-supervised 3D story bundle.
+            Early interest helps TaleMori understand whether families prefer
+            printable pages, printed packs, or future parent-supervised
+            collectible story objects.
           </p>
         </div>
         <Link className="button primary" href="/#interest">
-          Share interest
+          Join the first adventure
         </Link>
       </section>
     </main>

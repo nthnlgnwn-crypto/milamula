@@ -5,14 +5,14 @@ export default function ThankYouPage() {
     <main>
       <section className="simple-hero thank-you">
         <p className="eyebrow">Thank you</p>
-        <h1>Thank you for caring about Milamula.</h1>
+        <h1>Thank you for joining TaleMori&apos;s first adventure list.</h1>
         <p className="lead">
-          Your preorder interest has been received. Milamula will follow up by
-          WhatsApp or email when the first kit is ready to preview. No payment has
-          been charged.
+          Your preorder interest has been received. TaleMori will follow up by
+          WhatsApp or email when Mori and the Lost Moonlight is ready to preview.
+          No payment has been charged.
         </p>
         <Link className="button primary" href="/">
-          Back to Milamula
+          Back to TaleMori
         </Link>
       </section>
     </main>

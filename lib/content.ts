@@ -1,56 +1,56 @@
 export const kitFormats = [
   {
     name: "PDF-only activity kit",
-    detail: "A printable digital kit for families who want to try Milamula at home first."
+    detail: "A printable-first kit for families who want to try TaleMori at home with simple setup."
   },
   {
     name: "Printed worksheet pack",
-    detail: "A ready-to-use paper pack for parents who prefer less setup."
+    detail: "A ready-to-use paper pack for parents who prefer less printing and preparation."
   },
   {
-    name: "Printed pack + 3D bundle",
-    detail: "The printed pack plus parent-supervised 3D-printed story objects."
+    name: "Printed pack + collectible later",
+    detail: "A future option with parent-supervised Mori story objects after safety and production checks."
   }
 ];
 
 export const firstKit = {
-  title: "Milamula Adventure Kit #1",
+  title: "Mori and the Lost Moonlight",
   slug: "adventure-kit-1",
-  tagline: "A screen-light story and activity kit for curious little hands.",
-  ageRange: "Ages 3-8, with parent guidance",
-  learningGoal: "Practice gentle courage, care, patience, and trying again through story-led play.",
+  tagline: "A story-led activity kit for screen-light creative time with young children.",
+  ageRange: "Ages 4-7, with parent guidance",
+  learningGoal: "Help children practice gentle courage, feeling words, and small story missions with Mori.",
   includes: [
-    "short read-aloud story",
-    "printable activity pages",
+    "short illustrated story",
+    "printable activity mission",
     "parent guide with simple prompts",
-    "coloring or making page",
-    "one clear learning objective",
-    "optional parent-supervised 3D-printed character or object bundle"
+    "creative prompt",
+    "one gentle story mission",
+    "optional collectible character later"
   ],
-  themes: ["gentle courage", "kindness", "patience", "creative problem-solving"],
+  themes: ["gentle courage", "feelings", "kindness", "creative problem-solving"],
   supervisionNote:
-    "3D-printed objects are intended as parent-supervised activity objects, not baby toys. Final materials, size, finish, and age suitability must be verified before sale."
+    "Future collectible objects are intended as parent-supervised activity objects, not baby toys. Final materials, size, finish, and age suitability must be verified before sale."
 };
 
 export const faqs = [
   {
-    question: "Is Milamula a subscription?",
+    question: "Is TaleMori a subscription?",
     answer:
       "Not yet. The first release is a one-off activity kit. More kits may come later if families find this useful."
   },
   {
     question: "Can I buy only the printable PDF?",
     answer:
-      "Yes. The initial offer is designed to work as PDF-only, printed worksheet pack, or printed pack with an optional 3D bundle."
+      "Yes. The initial offer is designed to work as a printable-first story and activity kit."
   },
   {
-    question: "Are the 3D-printed objects toys?",
+    question: "Are future collectible objects toys?",
     answer:
       "They are framed as parent-supervised activity objects. Safety, material, finish, and sizing must be verified before any physical product is sold."
   },
   {
     question: "What ages is this for?",
     answer:
-      "The current direction is for families with young children around ages 3-8, with activities guided by a parent or adult."
+      "The current direction is for families with children around ages 4-7, with activities guided by a parent or adult."
   }
 ];
