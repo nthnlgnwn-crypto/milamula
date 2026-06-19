@@ -1,7 +1,7 @@
 import type { MilamulaPreorderInsert } from "@/lib/supabase";
 
-export const kitInterest = "Milamula Adventure Kit #1" as const;
-export const preorderSource = "milamula_website" as const;
+export const kitInterest = "Mori and the Lost Moonlight" as const;
+export const preorderSource = "talemori_website" as const;
 
 const allowedChildAges = new Set(["3-4", "5-6", "7-8", "Mixed ages"]);
 const maxNotesLength = 800;

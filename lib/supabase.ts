@@ -5,9 +5,9 @@ export type MilamulaPreorderInsert = {
   whatsapp: string;
   email: string | null;
   child_age: string | null;
-  kit_interest: "Milamula Adventure Kit #1";
+  kit_interest: "Mori and the Lost Moonlight";
   notes: string | null;
-  source: "milamula_website";
+  source: "talemori_website";
 };
 
 export function createSupabaseAnonClient(): SupabaseClient | null {

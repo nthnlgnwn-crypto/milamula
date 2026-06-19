@@ -1,17 +1,22 @@
-# Milamula Supabase Strategy
+# TaleMori Supabase Strategy
 
 ## Current Context
 
-Milamula is a Next.js and TypeScript MVP for validating `Milamula Adventure Kit #1`.
+TaleMori is a Next.js and TypeScript MVP for validating `Mori and the Lost Moonlight`.
 The current preorder flow posts from the browser to `/api/preorders`. The API route
 validates the payload, applies simple spam checks, and inserts into Supabase with
 the public anon key. The direct browser-to-Supabase insert has been removed.
 
-The current migration creates `public.milamula_preorders`, enables RLS, grants anon
-insert, and adds an insert-only policy constrained to:
+The first migration creates `public.milamula_preorders`, enables RLS, grants anon
+insert, and adds an insert-only policy. The table name intentionally remains
+`public.milamula_preorders` after the TaleMori rebrand to avoid unnecessary
+production migration risk.
 
-- `kit_interest = 'Milamula Adventure Kit #1'`
-- `source = 'milamula_website'`
+Migration `002_update_talemori_preorder_policy.sql` updates defaults and replaces
+the insert policy so transition inserts can use either:
+
+- old pair: `kit_interest = 'Milamula Adventure Kit #1'` and `source = 'milamula_website'`
+- new pair: `kit_interest = 'Mori and the Lost Moonlight'` and `source = 'talemori_website'`
 
 No public read, update, or delete policy exists.
 
@@ -134,15 +139,16 @@ Milamula.
 In Creatoroom staging first, then production:
 
 1. Open Supabase SQL Editor.
-2. Run `supabase/migrations/001_create_milamula_preorders.sql`.
-3. Confirm `public.milamula_preorders` exists.
-4. Confirm RLS is enabled.
-5. Confirm the only public policy is anon insert for intended kit/source.
-6. Confirm no anon select, update, or delete policy exists.
-7. Put the project URL and anon key into Milamula `.env.local` or deployment env.
-8. Restart the Milamula dev server or redeploy.
-9. Submit one test preorder.
-10. Confirm the row appears with expected values.
+2. Run `supabase/migrations/001_create_milamula_preorders.sql` if the table does not already exist.
+3. Run `supabase/migrations/002_update_talemori_preorder_policy.sql`.
+4. Confirm `public.milamula_preorders` exists.
+5. Confirm RLS is enabled.
+6. Confirm the only public policy is anon insert for intended kit/source pairs.
+7. Confirm no anon select, update, or delete policy exists.
+8. Put the project URL and anon key into Milamula `.env.local` or deployment env.
+9. Restart the dev server or redeploy.
+10. Submit one test preorder.
+11. Confirm the row appears with `Mori and the Lost Moonlight` and `talemori_website`.
 
 ## When To Move Milamula To Its Own Supabase Project
 

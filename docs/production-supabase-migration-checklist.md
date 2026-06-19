@@ -18,9 +18,18 @@ The current migration is safe to run in Creatoroom production because it:
 - does not drop, rename, or alter existing Creatoroom tables
 - enables RLS on the Milamula preorder table
 - grants anon insert on the Milamula preorder table
-- allows anon insert only for `kit_interest = 'Milamula Adventure Kit #1'`
-- allows anon insert only for `source = 'milamula_website'`
+- allows anon insert only for approved kit/source pairs
 - creates no public read, update, or delete policy
+
+After the TaleMori rebrand, also run:
+
+```text
+supabase/migrations/002_update_talemori_preorder_policy.sql
+```
+
+That migration preserves the table and existing rows, updates defaults to
+TaleMori values, and keeps RLS insert-only with compatibility for both old and
+new kit/source pairs.
 
 ## Pre-Migration Checklist
 
@@ -49,10 +58,11 @@ If anything is ambiguous, stop before running SQL.
 
 ## SQL To Run
 
-Run this file in Creatoroom production Supabase SQL Editor:
+Run these files in Creatoroom production Supabase SQL Editor:
 
 ```text
 supabase/migrations/001_create_milamula_preorders.sql
+supabase/migrations/002_update_talemori_preorder_policy.sql
 ```
 
 Do not run any unrelated SQL.
@@ -105,9 +115,9 @@ Do not:
 
 Use this fake row only:
 
-- Parent name: `Production Test Parent Milamula`
+- Parent name: `Production Test Parent TaleMori`
 - WhatsApp: `+6281234567890`
-- Email: `production.test.milamula@example.com`
+- Email: `production.test.talemori@example.com`
 - Child age: `5-6`
 - Notes: `Production smoke test only`
 
@@ -121,16 +131,16 @@ After production env values are configured:
 4. Confirm the form shows success.
 5. Confirm the API returns success.
 6. Open Supabase Table Editor.
-7. Confirm exactly one row exists for `production.test.milamula@example.com`.
+7. Confirm exactly one row exists for `production.test.talemori@example.com`.
 
 Expected row values:
 
-- `parent_name = 'Production Test Parent Milamula'`
+- `parent_name = 'Production Test Parent TaleMori'`
 - `whatsapp = '+6281234567890'`
-- `email = 'production.test.milamula@example.com'`
+- `email = 'production.test.talemori@example.com'`
 - `child_age = '5-6'`
-- `kit_interest = 'Milamula Adventure Kit #1'`
-- `source = 'milamula_website'`
+- `kit_interest = 'Mori and the Lost Moonlight'`
+- `source = 'talemori_website'`
 - `created_at` is populated
 
 ## RLS Verification
@@ -150,13 +160,13 @@ Do not weaken RLS to make readback easier.
 After verification, manually delete only the test row in Supabase Table Editor:
 
 ```text
-email = production.test.milamula@example.com
+email = production.test.talemori@example.com
 ```
 
 or:
 
 ```text
-parent_name = Production Test Parent Milamula
+parent_name = Production Test Parent TaleMori
 ```
 
 Do not delete any other rows.
@@ -184,8 +194,8 @@ notify pgrst, 'reload schema';
 If insert fails with RLS errors, verify the payload contains:
 
 ```text
-kit_interest = Milamula Adventure Kit #1
-source = milamula_website
+kit_interest = Mori and the Lost Moonlight
+source = talemori_website
 ```
 
 ## Stop Conditions

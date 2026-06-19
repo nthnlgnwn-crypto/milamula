@@ -1,12 +1,12 @@
-# Milamula
+# TaleMori
 
-Milamula is an exploratory children’s story, education, and activity product line.
+TaleMori is a character-led children’s story adventure kit brand.
 
-The current MVP validates one paid product before building a subscription platform:
+The current MVP validates one paid product before building a broader platform:
 
 - printable story-and-activity kit
 - optional printed worksheet pack
-- optional parent-supervised 3D-printed character/object bundle
+- optional parent-supervised collectible character/object bundle
 - simple preorder/interest capture
 
 ## MVP Scope
@@ -14,7 +14,7 @@ The current MVP validates one paid product before building a subscription platfo
 Built now:
 
 - landing page
-- Adventure Kit #1 detail page
+- first kit detail page
 - parent guide / how it works page
 - safety and supervision language
 - Supabase preorder interest form
@@ -46,6 +46,10 @@ validates the submission, rejects simple bot-like requests, and then inserts the
 preorder into Supabase with the public anon key. Row-level security stays enabled
 on `milamula_preorders`.
 
+The table name intentionally remains `milamula_preorders` after the TaleMori
+rebrand to avoid unnecessary production migration risk. New submissions use
+TaleMori-specific row values.
+
 Validation lives in `lib/preorderValidation.ts` and checks:
 
 - parent name is present
@@ -71,17 +75,18 @@ route.
 1. Create a Supabase project.
 2. Open the Supabase SQL editor.
 3. Run `supabase/migrations/001_create_milamula_preorders.sql`.
-4. Copy `.env.example` to `.env.local`.
-5. Fill in:
+4. Run `supabase/migrations/002_update_talemori_preorder_policy.sql`.
+5. Copy `.env.example` to `.env.local`.
+6. Fill in:
 
 ```bash
 NEXT_PUBLIC_SUPABASE_URL=your-project-url
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your-public-anon-key
 ```
 
-6. Restart the development server.
-7. Submit the preorder form on the homepage.
-8. Confirm the row appears in Supabase Table Editor > `milamula_preorders`.
+7. Restart the development server.
+8. Submit the preorder form on the homepage.
+9. Confirm the row appears in Supabase Table Editor > `milamula_preorders`.
 
 If environment variables are missing, the form should show a friendly setup error
 instead of silently losing the submission.
@@ -95,8 +100,17 @@ The current form captures:
 - optional email
 - optional child age
 - optional notes
+- kit interest: `Mori and the Lost Moonlight`
+- source: `talemori_website`
+
+Older rows may still contain the pre-rebrand values:
+
 - kit interest: `Milamula Adventure Kit #1`
 - source: `milamula_website`
+
+Migration `002_update_talemori_preorder_policy.sql` temporarily allows both old
+and new value pairs so existing deployments and new TaleMori deployments do not
+break during rollout.
 
 The browser submits to the local app route. Supabase credentials are read only by
 the route handler, using:
@@ -107,8 +121,8 @@ the route handler, using:
 ## Local Testing
 
 Without Supabase environment values, submit the homepage form and confirm it
-shows a friendly configuration error. After `.env.local` is configured and the
-SQL migration has been run, submit again and confirm a row appears in Supabase.
+shows a friendly configuration error. After `.env.local` is configured and both
+SQL migrations have been run, submit again and confirm a row appears in Supabase.
 
 Run checks before shipping changes:
 

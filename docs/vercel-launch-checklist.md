@@ -1,9 +1,9 @@
-# Milamula Vercel Launch Checklist
+# TaleMori Vercel Launch Checklist
 
 ## Scope
 
 This checklist covers Vercel production environment setup and preorder smoke
-testing for the Milamula MVP. It does not add payment, dashboard, login, CMS,
+testing for the TaleMori MVP. It does not add payment, dashboard, login, CMS,
 analytics, CAPTCHA, child profiles, AI generation, marketplace features, or
 automated fulfillment.
 
@@ -51,7 +51,7 @@ environment variables, not as the default local development target.
 
 ## Where To Configure Env Vars In Vercel
 
-1. Open the Milamula project in Vercel.
+1. Open the TaleMori project in Vercel.
 2. Go to Settings.
 3. Go to Environment Variables.
 4. Add `NEXT_PUBLIC_SUPABASE_URL`.
@@ -81,11 +81,11 @@ The current implementation is compatible with Vercel production deployment:
 
 Use fake test data only. Do not use real customer data.
 
-Submit this preorder through the deployed Milamula homepage:
+Submit this preorder through the deployed TaleMori homepage:
 
-- Parent name: `Production Test Parent Milamula`
+- Parent name: `Production Test Parent TaleMori`
 - WhatsApp: `+6281234567890`
-- Email: `production.test.milamula@example.com`
+- Email: `production.test.talemori@example.com`
 - Child age: `5-6`
 - Notes: `Production smoke test only`
 
@@ -102,12 +102,12 @@ production Supabase Table Editor.
 
 Expected row values:
 
-- `parent_name = 'Production Test Parent Milamula'`
+- `parent_name = 'Production Test Parent TaleMori'`
 - `whatsapp = '+6281234567890'`
-- `email = 'production.test.milamula@example.com'`
+- `email = 'production.test.talemori@example.com'`
 - `child_age = '5-6'`
-- `kit_interest = 'Milamula Adventure Kit #1'`
-- `source = 'milamula_website'`
+- `kit_interest = 'Mori and the Lost Moonlight'`
+- `source = 'talemori_website'`
 - `created_at` is populated
 
 ## Cleanup
@@ -115,13 +115,13 @@ Expected row values:
 After verification, manually delete only the fake production test row:
 
 ```text
-email = production.test.milamula@example.com
+email = production.test.talemori@example.com
 ```
 
 or:
 
 ```text
-parent_name = Production Test Parent Milamula
+parent_name = Production Test Parent TaleMori
 ```
 
 Do not delete any other rows.
@@ -134,7 +134,8 @@ If the deployed form cannot submit:
 2. Confirm the deployment was redeployed after env changes.
 3. Confirm `NEXT_PUBLIC_SUPABASE_URL` points to `ndqblzejaqjnwmyomhgd`.
 4. Confirm `public.milamula_preorders` is visible to PostgREST.
-5. Confirm RLS still has the anon insert policy.
+5. Confirm migration `002_update_talemori_preorder_policy.sql` has been run.
+6. Confirm RLS still has the anon insert policy for TaleMori values.
 6. Revert the Vercel deployment to the previous working deployment if the issue is
    user-facing.
 
