@@ -103,6 +103,85 @@ main {
   padding-top: clamp(34px, 6vw, 72px);
 }
 
+.cinematic-hero {
+  position: relative;
+  display: flex;
+  min-height: min(860px, calc(100svh - 68px));
+  max-width: none;
+  align-items: flex-end;
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 248, 232, 0.18);
+  border-bottom: 1px solid rgba(55, 66, 31, 0.28);
+  background: var(--leaf-dark);
+  padding: clamp(32px, 5vw, 72px) var(--gutter);
+}
+
+.cinematic-hero .home-hero-copy {
+  position: relative;
+  z-index: 2;
+  width: min(var(--max), 100%);
+  max-width: none;
+  margin: 0 auto;
+  color: var(--white);
+}
+
+.cinematic-hero h1 {
+  max-width: 820px;
+  color: var(--white);
+  font-size: clamp(3.7rem, 9vw, 8.8rem);
+  text-wrap: balance;
+}
+
+.cinematic-hero .lead {
+  max-width: 650px;
+  color: rgba(255, 253, 247, 0.86);
+}
+
+.cinematic-hero .eyebrow {
+  color: var(--sun);
+}
+
+.cinematic-hero .button.primary {
+  background: var(--sun);
+  color: #1f2715;
+}
+
+.cinematic-hero .button.secondary {
+  border-color: rgba(255, 253, 247, 0.42);
+  background: rgba(255, 253, 247, 0.14);
+  color: var(--white);
+}
+
+.hero-video-frame,
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-video-frame {
+  z-index: 0;
+}
+
+.hero-video,
+.hero-poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-poster {
+  display: block;
+  object-position: 55% center;
+  filter: saturate(0.9) contrast(0.96);
+}
+
+.hero-overlay {
+  z-index: 1;
+  background:
+    linear-gradient(90deg, rgba(18, 24, 14, 0.88) 0%, rgba(28, 37, 20, 0.64) 38%, rgba(28, 37, 20, 0.14) 72%),
+    linear-gradient(0deg, rgba(13, 18, 10, 0.76) 0%, rgba(13, 18, 10, 0.16) 58%, rgba(13, 18, 10, 0.34) 100%);
+}
+
 .home-hero-copy {
   max-width: 620px;
 }
@@ -315,6 +394,10 @@ li {
   gap: 16px;
 }
 
+.feature-grid-four {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
 .editorial-card,
 .feature-card,
 .format-card,
@@ -350,6 +433,28 @@ details,
   margin-bottom: 18px;
   border-radius: 50%;
   background: var(--sun);
+}
+
+.card-marker {
+  display: inline-grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  margin-bottom: 18px;
+  border-radius: 50%;
+  background: rgba(215, 155, 50, 0.18);
+  color: var(--leaf-dark);
+  font: 800 0.86rem Arial, sans-serif;
+}
+
+.first-adventure {
+  display: grid;
+  grid-template-columns: minmax(0, 0.78fr) minmax(320px, 1.22fr);
+  gap: clamp(28px, 5vw, 58px);
+  align-items: center;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: clamp(28px, 5vw, 48px) 0;
 }
 
 .kit-preview {
@@ -594,6 +699,31 @@ summary {
   font-weight: 700;
 }
 
+.updates-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.update-card {
+  min-height: 220px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255, 253, 247, 0.72);
+  box-shadow: 0 10px 30px rgba(65, 47, 24, 0.07);
+  padding: 24px;
+}
+
+.update-card p:last-child {
+  color: var(--muted);
+}
+
+.center-action {
+  display: flex;
+  justify-content: center;
+  margin-top: 26px;
+}
+
 .thank-you {
   min-height: 70vh;
 }
@@ -610,6 +740,7 @@ summary {
   .home-hero,
   .kit-hero,
   .kit-preview,
+  .first-adventure,
   .expectation-inner,
   .preorder-section,
   .band,
@@ -617,8 +748,16 @@ summary {
     grid-template-columns: 1fr;
   }
 
+  .cinematic-hero {
+    min-height: min(760px, calc(100svh - 70px));
+  }
+
   .home-hero h1 {
     font-size: clamp(3.7rem, 16vw, 6.4rem);
+  }
+
+  .cinematic-hero h1 {
+    font-size: clamp(3.8rem, 11vw, 7rem);
   }
 
   .hero-art {
@@ -632,7 +771,9 @@ summary {
 
   .editorial-grid,
   .feature-grid,
+  .feature-grid-four,
   .format-list,
+  .updates-grid,
   .step-list {
     grid-template-columns: 1fr;
   }
@@ -659,6 +800,7 @@ summary {
   .kit-hero,
   .simple-hero,
   .home-hero,
+  .cinematic-hero,
   .expectation-inner,
   .band {
     padding-right: 18px;
@@ -667,6 +809,26 @@ summary {
 
   .home-hero {
     padding-top: 28px;
+  }
+
+  .cinematic-hero {
+    min-height: 720px;
+    padding-top: 32px;
+    padding-bottom: 34px;
+  }
+
+  .cinematic-hero h1 {
+    font-size: clamp(3.2rem, 15vw, 5.2rem);
+  }
+
+  .hero-poster {
+    object-position: 58% center;
+  }
+
+  .hero-overlay {
+    background:
+      linear-gradient(0deg, rgba(13, 18, 10, 0.88) 0%, rgba(13, 18, 10, 0.56) 52%, rgba(13, 18, 10, 0.2) 100%),
+      linear-gradient(90deg, rgba(18, 24, 14, 0.7), rgba(18, 24, 14, 0.18));
   }
 
   .hero-facts {
