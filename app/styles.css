@@ -169,6 +169,14 @@ main {
   object-fit: cover;
 }
 
+.hero-video {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: block;
+  object-position: 55% center;
+}
+
 .hero-poster {
   display: block;
   object-position: 55% center;
@@ -823,6 +831,10 @@ summary {
 
   .hero-poster {
     object-position: 58% center;
+  }
+
+  .hero-video {
+    display: none;
   }
 
   .hero-overlay {

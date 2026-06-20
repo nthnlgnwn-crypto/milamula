@@ -65,13 +65,6 @@ export default function Home() {
     <main className="home-page">
       <section className="home-hero cinematic-hero" aria-label="TaleMori opening story">
         <div className="hero-video-frame" aria-hidden="true">
-          {/*
-            Future local video source goes here, for example:
-            <video className="hero-video" poster="/assets/characters/mori-concept-final.png" autoPlay muted loop playsInline>
-              <source src="/assets/video/talemori-hero.mp4" type="video/mp4" />
-            </video>
-            Until a real video exists, the Mori concept image is the accessible poster-style fallback.
-          */}
           <Image
             className="hero-poster"
             src="/assets/characters/mori-concept-final.png"
@@ -81,6 +74,17 @@ export default function Home() {
             loading="eager"
             priority
           />
+          <video
+            className="hero-video"
+            poster="/assets/characters/mori-concept-final.png"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+          >
+            <source src="/assets/hero/talemori-mori-hero.mp4" type="video/mp4" />
+          </video>
         </div>
         <div className="hero-overlay" />
         <div className="home-hero-copy">
