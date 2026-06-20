@@ -132,6 +132,94 @@ main {
   text-wrap: balance;
 }
 
+.hero-title-sprout {
+  position: relative;
+  display: inline-block;
+  transform-origin: 18% 72%;
+  animation: story-sprout-glow 9s ease-in-out 0.5s infinite;
+  text-shadow:
+    0 0 18px rgba(215, 155, 50, 0.18),
+    0 0 34px rgba(255, 248, 232, 0.08);
+}
+
+.hero-title-leaf {
+  position: absolute;
+  width: clamp(11px, 1.4vw, 18px);
+  height: clamp(6px, 0.8vw, 10px);
+  border-radius: 100% 0 100% 0;
+  background: linear-gradient(135deg, rgba(242, 229, 201, 0.96), rgba(215, 155, 50, 0.58) 42%, rgba(82, 97, 47, 0.9));
+  box-shadow: 0 0 12px rgba(215, 155, 50, 0.24);
+  opacity: 0;
+  transform: scale(0.35) rotate(-22deg);
+  transform-origin: 20% 80%;
+  animation: story-leaf-grow 9s ease-in-out 1s infinite;
+  pointer-events: none;
+}
+
+.hero-title-leaf-left {
+  top: 0.08em;
+  left: -0.06em;
+}
+
+.hero-title-leaf-right {
+  right: -0.1em;
+  bottom: 0.18em;
+  animation-delay: 1.45s;
+  transform: scale(0.35) rotate(28deg);
+}
+
+@keyframes story-sprout-glow {
+  0%,
+  68%,
+  100% {
+    transform: scale(1);
+    text-shadow:
+      0 0 18px rgba(215, 155, 50, 0.18),
+      0 0 34px rgba(255, 248, 232, 0.08);
+  }
+
+  18% {
+    transform: scale(1.018);
+    text-shadow:
+      0 0 24px rgba(215, 155, 50, 0.34),
+      0 0 46px rgba(255, 248, 232, 0.18);
+  }
+}
+
+@keyframes story-leaf-grow {
+  0%,
+  58%,
+  100% {
+    opacity: 0;
+    transform: translateY(2px) scale(0.35) rotate(-22deg);
+  }
+
+  16%,
+  30% {
+    opacity: 0.88;
+    transform: translateY(-2px) scale(1) rotate(-18deg);
+  }
+}
+
+.hero-title-leaf-right {
+  animation-name: story-leaf-grow-right;
+}
+
+@keyframes story-leaf-grow-right {
+  0%,
+  58%,
+  100% {
+    opacity: 0;
+    transform: translateY(2px) scale(0.35) rotate(28deg);
+  }
+
+  16%,
+  30% {
+    opacity: 0.82;
+    transform: translateY(-2px) scale(1) rotate(22deg);
+  }
+}
+
 .cinematic-hero .lead {
   max-width: 650px;
   color: rgba(255, 253, 247, 0.86);
@@ -829,6 +917,19 @@ summary {
     font-size: clamp(3.2rem, 15vw, 5.2rem);
   }
 
+  .hero-title-leaf {
+    width: 10px;
+    height: 6px;
+  }
+
+  .hero-title-leaf-left {
+    left: -0.02em;
+  }
+
+  .hero-title-leaf-right {
+    right: -0.04em;
+  }
+
   .hero-poster {
     object-position: 58% center;
   }
@@ -864,5 +965,24 @@ summary {
 
   h2 {
     font-size: clamp(1.85rem, 10vw, 3rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-title-sprout,
+  .hero-title-leaf {
+    animation: none;
+  }
+
+  .hero-title-sprout {
+    transform: none;
+    text-shadow:
+      0 0 18px rgba(215, 155, 50, 0.16),
+      0 0 34px rgba(255, 248, 232, 0.08);
+  }
+
+  .hero-title-leaf {
+    opacity: 0.7;
+    transform: none;
   }
 }

@@ -89,7 +89,14 @@ export default function Home() {
         <div className="hero-overlay" />
         <div className="home-hero-copy">
           <p className="eyebrow">TaleMori</p>
-          <h1>Stories that grow into play.</h1>
+          <h1 className="hero-title">
+            <span className="hero-title-sprout">
+              <span className="hero-title-leaf hero-title-leaf-left" aria-hidden="true" />
+              Stories
+              <span className="hero-title-leaf hero-title-leaf-right" aria-hidden="true" />
+            </span>{" "}
+            that grow into play.
+          </h1>
           <p className="lead">
             Meet Mori, the Little Lantern Keeper, and join TaleMori&apos;s first
             story-led activity adventure for ages 4-7.
