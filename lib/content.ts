@@ -1,11 +1,11 @@
 export const kitFormats = [
   {
     name: "PDF-only activity kit",
-    detail: "A printable-first kit for families who want to try TaleMori at home with simple setup."
+    detail: "A ready-to-use printable kit you can try at home without planning an activity from scratch."
   },
   {
     name: "Printed worksheet pack",
-    detail: "A ready-to-use paper pack for parents who prefer less printing and preparation."
+    detail: "A paper pack option for parents who prefer less printing and preparation."
   },
   {
     name: "Printed pack + collectible later",
@@ -16,16 +16,15 @@ export const kitFormats = [
 export const firstKit = {
   title: "Mori and the Lost Moonlight",
   slug: "adventure-kit-1",
-  tagline: "A story-led activity kit for screen-light creative time with young children.",
+  tagline: "A ready-to-use story adventure for screen-light parent-child play.",
   ageRange: "Ages 4-7, with parent guidance",
-  learningGoal: "Help children practice gentle courage, feeling words, and small story missions with Mori.",
+  learningGoal: "Turn one gentle Mori story into a simple mission you can read, make, and play together.",
   includes: [
-    "short illustrated story",
-    "printable activity mission",
-    "parent guide with simple prompts",
-    "creative prompt",
-    "one gentle story mission",
-    "optional collectible character later"
+    "A short illustrated story",
+    "A printable activity mission",
+    "A parent guide with simple prompts",
+    "A creative task children can complete",
+    "Optional Mori collectible later"
   ],
   themes: ["gentle courage", "feelings", "kindness", "creative problem-solving"],
   supervisionNote:
@@ -34,23 +33,43 @@ export const firstKit = {
 
 export const faqs = [
   {
+    question: "Is this free?",
+    answer:
+      "Joining the early list is free. When the pilot kit is ready, TaleMori will share the details, price, and format before you decide whether to buy."
+  },
+  {
+    question: "Is payment charged now?",
+    answer:
+      "No. The form only records your interest. No payment is charged, and no subscription is started."
+  },
+  {
+    question: "Is this digital or physical?",
+    answer:
+      "The first version is planned as a printable-first story activity kit. A printed pack or parent-supervised collectible may come later if the pilot works well for families."
+  },
+  {
+    question: "What age is it for?",
+    answer:
+      "TaleMori is designed for children around ages 4-7, with a parent or adult joining the activity."
+  },
+  {
+    question: "How long does one activity take?",
+    answer:
+      "The first kit is intended for a short, calm session. Most families should be able to read, make, and play the mission in one sitting."
+  },
+  {
+    question: "Do I need special materials?",
+    answer:
+      "The first kit is being designed around simple home materials such as paper, coloring tools, and a printed mission page."
+  },
+  {
     question: "Is TaleMori a subscription?",
     answer:
       "Not yet. The first release is a one-off activity kit. More kits may come later if families find this useful."
   },
   {
-    question: "Can I buy only the printable PDF?",
+    question: "When will the first kit be ready?",
     answer:
-      "Yes. The initial offer is designed to work as a printable-first story and activity kit."
-  },
-  {
-    question: "Are future collectible objects toys?",
-    answer:
-      "They are framed as parent-supervised activity objects. Safety, material, finish, and sizing must be verified before any physical product is sold."
-  },
-  {
-    question: "What ages is this for?",
-    answer:
-      "The current direction is for families with children around ages 4-7, with activities guided by a parent or adult."
+      "TaleMori is preparing the first pilot kit now. Families on the early list will be contacted first when Mori and the Lost Moonlight is ready to preview."
   }
 ];

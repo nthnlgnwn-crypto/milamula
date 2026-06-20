@@ -12,7 +12,7 @@ export default function KitPage() {
           <p className="lead">{firstKit.tagline}</p>
           <p className="small-meta">{firstKit.ageRange}</p>
           <Link className="button primary" href="/#interest">
-            Join the first adventure
+            Join the first adventure list
           </Link>
         </div>
         <Image
@@ -26,20 +26,20 @@ export default function KitPage() {
 
       <section className="section split">
         <div>
-          <p className="eyebrow">Learning objective</p>
+          <p className="eyebrow">Parent benefit</p>
           <h2>{firstKit.learningGoal}</h2>
           <p>
-            The kit is designed to feel playful and parent-friendly while giving
-            adults one simple mission to explore during the activity.
+            TaleMori is made for parents who want something calmer than a screen
+            but easier than preparing a craft or lesson from scratch.
           </p>
         </div>
         <div className="note-box">
-          <h3>Activity preview</h3>
+          <h3>How the first mission feels</h3>
           <ul>
             <li>Read Mori&apos;s short illustrated story together.</li>
+            <li>Help Mori find a missing little light.</li>
             <li>Complete one printable moonlight mission.</li>
-            <li>Use parent prompts to name feelings and choices.</li>
-            <li>Optionally add a supervised collectible later.</li>
+            <li>Use simple parent prompts for what to say and do next.</li>
           </ul>
         </div>
       </section>
@@ -47,7 +47,7 @@ export default function KitPage() {
       <section className="section">
         <div className="section-heading">
           <p className="eyebrow">What is included</p>
-          <h2>A complete little kit without a big setup.</h2>
+          <h2>The first kit is planned to include:</h2>
         </div>
         <div className="feature-grid">
           {firstKit.includes.map((item) => (
@@ -61,7 +61,7 @@ export default function KitPage() {
 
       <section className="section">
         <div className="section-heading">
-          <p className="eyebrow">Product formats</p>
+          <p className="eyebrow">Possible formats</p>
           <h2>Start printable-first, then grow carefully.</h2>
         </div>
         <div className="format-list">
@@ -76,10 +76,13 @@ export default function KitPage() {
 
       <section className="band">
         <div>
-          <p className="eyebrow">Safety and supervision</p>
-          <h2>Safety and supervision come first.</h2>
+          <p className="eyebrow">Early list</p>
+          <h2>No payment is charged today.</h2>
         </div>
-        <p>{firstKit.supervisionNote}</p>
+        <p>
+          Join the interest list to hear when the pilot kit is ready. TaleMori
+          will share the details, price, and format before you decide.
+        </p>
       </section>
     </main>
   );

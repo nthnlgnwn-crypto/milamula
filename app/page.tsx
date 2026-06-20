@@ -6,28 +6,28 @@ import { faqs, firstKit, kitFormats } from "@/lib/content";
 const promises = [
   {
     title: "Story-led play",
-    copy: "Every adventure begins with a gentle tale children can enter."
+    copy: "The activity begins with a character and a reason to care."
   },
   {
-    title: "Hands-on missions",
-    copy: "Read, make, and complete small creative prompts together."
+    title: "Ready-to-use missions",
+    copy: "Print, read, and play without planning a lesson."
   },
   {
-    title: "Parent-friendly setup",
-    copy: "Designed for simple, screen-light moments without complicated prep."
+    title: "Parent-friendly guide",
+    copy: "Simple prompts help you know what to say and do next."
   },
   {
     title: "A growing character world",
-    copy: "Mori and friends can grow into future kits, keepsakes, and collectibles."
+    copy: "Mori can return in future stories, kits, and collectibles."
   }
 ];
 
 const kitHighlights = [
-  "short illustrated story",
-  "printable activity mission",
-  "parent guide",
-  "creative prompt",
-  "optional collectible character later"
+  "A short illustrated story",
+  "A printable activity mission",
+  "A parent guide with simple prompts",
+  "A creative task children can complete",
+  "Optional Mori collectible later"
 ];
 
 const howItWorks = [
@@ -98,24 +98,36 @@ export default function Home() {
             that grow into play.
           </h1>
           <p className="lead">
-            Meet Mori, the Little Lantern Keeper, and join TaleMori&apos;s first
-            story-led activity adventure for ages 4-7.
+            TaleMori is a ready-to-use story adventure kit for ages 4-7, made
+            for parents who want simple, screen-light creative time with their child.
           </p>
           <div className="button-row">
             <Link className="button primary" href="#interest">
-              Join the first adventure
+              Join the first adventure list
             </Link>
-            <Link className="button secondary" href="#mori">
-              Meet Mori
+            <Link className="button secondary" href="#first-adventure">
+              See what&apos;s inside
             </Link>
           </div>
         </div>
       </section>
 
+      <section className="section split">
+        <div>
+          <p className="eyebrow">For busy parents</p>
+          <h2>Meaningful play should not need a full lesson plan.</h2>
+        </div>
+        <p className="lead-small">
+          Some days, you want something calmer than a screen but easier than
+          preparing a craft from scratch. TaleMori turns one gentle story into a
+          simple play mission you can do together.
+        </p>
+      </section>
+
       <section className="section promise-section">
         <div className="section-heading centered">
-          <p className="eyebrow">TaleMori method</p>
-          <h2>What makes TaleMori different?</h2>
+          <p className="eyebrow">Ready-to-use story adventures</p>
+          <h2>Screen-light play, without starting from a blank page.</h2>
         </div>
         <div className="editorial-grid feature-grid-four">
           {promises.map((promise, index) => (
@@ -128,26 +140,29 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section first-adventure-section" id="mori">
+      <section className="section first-adventure-section" id="first-adventure">
         <div className="first-adventure">
           <div className="kit-preview-copy">
             <p className="eyebrow">First adventure kit</p>
-            <h2>{firstKit.title}</h2>
+            <h2>First adventure: {firstKit.title}</h2>
             <p>
-              Mori carries the Lantern of Little Lights through a lost moonlit
-              path, inviting children to read, make, name a feeling, and complete
-              one small creative mission with a parent.
+              Mori is the Little Lantern Keeper of the story forest. In the
+              first TaleMori adventure, children help Mori find a missing little
+              light through a story, a printable mission, and a simple creative
+              activity.
             </p>
+            <p className="soft-note">The first kit is planned to include:</p>
             <ul className="check-list">
               {kitHighlights.map((item) => (
                 <li key={item}>{item}</li>
               ))}
             </ul>
             <p className="soft-note">
-              This is an early preorder interest list. No payment is charged yet.
+              No payment is charged today. You&apos;ll be contacted first when
+              the pilot kit is ready, with details, price, and format before you decide.
             </p>
             <Link className="button primary" href="#interest">
-              Join the first adventure
+              Join the first adventure list
             </Link>
           </div>
           <figure className="image-card image-card-wide">
@@ -178,7 +193,8 @@ export default function Home() {
             <p>
               Mori is a gentle woodland guide in a moss-green hooded cape,
               carrying the Lantern of Little Lights. The lantern glows when a
-              child begins a brave story mission.
+              child begins a brave story mission and helps Mori take the next
+              small step.
             </p>
             <p className="soft-note">
               Quietly brave, kind, curious, and comforting.
@@ -190,7 +206,7 @@ export default function Home() {
       <section className="section">
         <div className="section-heading centered">
           <p className="eyebrow">How it works</p>
-          <h2>Read, make, then decide if the first kit fits your family.</h2>
+          <h2>One story becomes one small mission.</h2>
         </div>
         <div className="step-list">
           {howItWorks.map((step, index) => (
@@ -231,7 +247,7 @@ export default function Home() {
         <div className="expectation-inner">
           <div>
             <p className="eyebrow">Parent expectations</p>
-            <h2>Simple, printable, and still early.</h2>
+            <h2>Simple setup. Clear next step. No payment today.</h2>
           </div>
           <div className="expectation-grid">
             {kitFormats.map((format) => (
@@ -243,8 +259,8 @@ export default function Home() {
             <article>
               <h3>No payment charged yet</h3>
               <p>
-                The form is only an early preorder interest list. TaleMori will
-                follow up before anything is confirmed or charged.
+                You&apos;ll be contacted first with the pilot kit details, price,
+                and format before you decide.
               </p>
             </article>
           </div>
@@ -257,12 +273,13 @@ export default function Home() {
           <h2>Join the first TaleMori adventure list.</h2>
           <p className="lead-small">
             Leave your details if you want to hear when {firstKit.title} is ready
-            to preview. TaleMori will follow up by WhatsApp or email.
+            to preview. TaleMori will follow up by WhatsApp or email with the
+            pilot kit details before you decide.
           </p>
           <ul className="plain-list">
-            <li>No payment is charged here.</li>
+            <li>No payment is charged today.</li>
             <li>No subscription is started.</li>
-            <li>Use fake or test details only when checking the form.</li>
+            <li>You&apos;ll see the format and price before choosing.</li>
           </ul>
         </div>
         <div className="form-panel">

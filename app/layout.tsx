@@ -4,7 +4,8 @@ import "./styles.css";
 
 export const metadata: Metadata = {
   title: "TaleMori",
-  description: "Stories that grow into play through Mori-led adventure kits."
+  description:
+    "Ready-to-use story adventure kits for screen-light parent-child play."
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
@@ -23,7 +24,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         </header>
         {children}
         <footer className="site-footer">
-          <p>TaleMori creates story-led activity kits for screen-light parent-child time.</p>
+          <p>TaleMori creates ready-to-use story adventure kits for screen-light parent-child play.</p>
           <p>Future collectible objects require parent supervision and verified production standards before sale.</p>
         </footer>
       </body>

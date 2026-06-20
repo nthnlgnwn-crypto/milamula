@@ -7,9 +7,10 @@ export default function ThankYouPage() {
         <p className="eyebrow">Thank you</p>
         <h1>Thank you for joining TaleMori&apos;s first adventure list.</h1>
         <p className="lead">
-          Your preorder interest has been received. TaleMori will follow up by
-          WhatsApp or email when Mori and the Lost Moonlight is ready to preview.
-          No payment has been charged.
+          Your interest has been received. TaleMori will follow up by WhatsApp
+          or email when Mori and the Lost Moonlight is ready to preview, with
+          the pilot kit details, price, and format before you decide. No payment
+          has been charged.
         </p>
         <Link className="button primary" href="/">
           Back to TaleMori
