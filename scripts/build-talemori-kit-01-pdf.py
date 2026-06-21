@@ -307,15 +307,18 @@ def draw_moonlight_path(c):
     draw_brand(c, "Activity")
     draw_title(c, "Help Mori Follow the Moonlight Path", "Color one light at each stop. Can you help Mori remember the way?")
     stops = ["Empty lantern", "Shimmering leaf", "Quiet path", "Sleepy seed", "Lantern home"]
-    start_x = MARGIN + 18 * mm
-    start_y = PAGE_H - 95 * mm
-    gap = 34 * mm
+    positions = [
+        (MARGIN + 18 * mm, PAGE_H - 95 * mm),
+        (MARGIN + 100 * mm, PAGE_H - 128 * mm),
+        (MARGIN + 18 * mm, PAGE_H - 162 * mm),
+        (MARGIN + 100 * mm, PAGE_H - 196 * mm),
+        (MARGIN + 18 * mm, PAGE_H - 230 * mm),
+    ]
     hex_stroke(c, LINE)
     c.setLineWidth(2)
-    c.bezier(start_x, start_y, start_x + 40 * mm, start_y - 30 * mm, start_x + 80 * mm, start_y + 22 * mm, start_x + 128 * mm, start_y - 15 * mm)
-    for i, stop in enumerate(stops):
-        x = start_x + (i % 2) * 72 * mm
-        y = start_y - i * gap
+    for start, end in zip(positions, positions[1:]):
+        c.line(start[0], start[1], end[0], end[1])
+    for i, (stop, (x, y)) in enumerate(zip(stops, positions)):
         hex_fill(c, CREAM)
         hex_stroke(c, GOLD)
         c.circle(x, y, 11 * mm, fill=1, stroke=1)
